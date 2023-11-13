@@ -43,6 +43,60 @@ function Home() {
           <p className='category-item-desc'>新鲜蔬菜</p>
         </div>
       </div>
+      <div className="card">
+        <h3 className="card-title">
+          <img className='card-title-img' src="http://statics.dell-lee.com/shopping/hot.png" alt="新品尝鲜" />
+          新品尝鲜
+          <div className="card-title-more">更多<span className="iconfont">&#xe614;</span></div>
+        </h3>
+        <div className="card-content">
+          <div className="card-content-item">
+            <img className='card-content-item-img' src="http://statics.dell-lee.com/shopping/hot.png" alt="" />
+            <p className="card-content-item-desc">金锣 国产猪肉 去皮五花肉...</p>
+            <p className="card-content-item-price">
+              <span className="card-content-item-yen"> &yen;</span>
+              66.0
+              <div className="iconfont">&#xe606;</div>
+            </p>
+          </div>
+          <div className="card-content-item">
+            <img className='card-content-item-img' src="http://statics.dell-lee.com/shopping/hot.png" alt="" />
+            <p className="card-content-item-desc">金锣 国产猪肉 去皮五花肉...</p>
+            <p className="card-content-item-price">
+              <span className="card-content-item-yen"> &yen;</span>
+              66.0
+              <div className="iconfont">&#xe606;</div>
+            </p>
+          </div>
+          <div className="card-content-item">
+            <img className='card-content-item-img' src="http://statics.dell-lee.com/shopping/hot.png" alt="" />
+            <p className="card-content-item-desc">金锣 国产猪肉 去皮五花肉...</p>
+            <p className="card-content-item-price">
+              <span className="card-content-item-yen"> &yen;</span>
+              66.0
+              <div className="iconfont">&#xe606;</div>
+            </p>
+          </div>
+          <div className="card-content-item">
+            <img className='card-content-item-img' src="http://statics.dell-lee.com/shopping/hot.png" alt="" />
+            <p className="card-content-item-desc">金锣 国产猪肉 去皮五花肉...</p>
+            <p className="card-content-item-price">
+              <span className="card-content-item-yen"> &yen;</span>
+              66.0
+              <div className="iconfont">&#xe606;</div>
+            </p>
+          </div>
+          <div className="card-content-item">
+            <img className='card-content-item-img' src="http://statics.dell-lee.com/shopping/hot.png" alt="" />
+            <p className="card-content-item-desc">金锣 国产猪肉 去皮五花肉...</p>
+            <p className="card-content-item-price">
+              <span className="card-content-item-yen"> &yen;</span>
+              66.0
+              <div className="iconfont">&#xe606;</div>
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
 
   )

@@ -37,7 +37,6 @@ const router = createHashRouter([
 ])
 
 function App() {
-  // return (<h1>Hi</h1>)
   return ( <RouterProvider router={router} />);
 }
 
