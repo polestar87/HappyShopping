@@ -1,0 +1,84 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+/* 在线链接服务仅供平台体验和调试使用，平台不承诺服务的稳定性，企业客户需下载字体包自行发布使用并做好备份。 */
+@font-face {
+  font-family: 'iconfont';  /* Project id 4257241 */
+  src: url('//at.alicdn.com/t/c/font_4257241_5hxd5nlk0x4.woff2?t=1695428669511') format('woff2'),
+       url('//at.alicdn.com/t/c/font_4257241_5hxd5nlk0x4.woff?t=1695428669511') format('woff'),
+       url('//at.alicdn.com/t/c/font_4257241_5hxd5nlk0x4.ttf?t=1695428669511') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-arrowright:before {
+  content: "\e672";
+}
+input {
+  outline: none;
+  background: transparent;
+  border: none;
+  outline: medium;
+}
+*:focus {
+  outline: none;
+  background-color: transparent;
+}
+::selection {
+  background: transparent;
+}
+::-moz-selection {
+  background: transparent;
+}
+
+
+.page {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  background-color: #fff;
+  font-size: 0.2rem;
+}
+.guide-page {
+  opacity: 0;
+  transition: all 3s;
+}
+.guide-page .main-pic {
+  display: block;
+  width: 0.86rem;
+  height: 0.7rem;
+  padding: 0.93rem 0.29rem 0;
+  margin: 0 auto;
+}
+.guide-page .title {
+  color: #242424;
+  font-weight: regular;
+  font-size: 0.2rem;
+  line-height: 0.23rem;
+  letter-spacing: 0;
+  text-align: center;
+}
+.guide-page .sub-pic {
+  display: block;
+  width: 2.02rem;
+  height: 1.18rem;
+  margin: 1.7rem auto 1.7rem auto;
+}
+.guide-page .arrow-icon {
+  position: absolute;
+  left: 0;
+  bottom: 0.73rem;
+  right: 0;
+  text-align: center;
+  color: #73d13d;
+  font-size: 0.2rem;
+  font-weight: bold;
+  line-height: 0.16rem;
+}
