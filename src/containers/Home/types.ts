@@ -6,17 +6,17 @@ export type BannersType = Array<{
   id: string,
   url: string
 }>;
-
+export type CategoriesType = Array<{
+  id: string,
+  url: string,
+  name: string
+}>;
 export type ResponseType = {
   success: boolean;
   data: {
     location: LocationType;
     banners: BannersType;
-    categories: Array<{
-      id: string,
-      url: string,
-      name: string
-    }>;
+    categories: CategoriesType;
     freshes:  Array<{
       id: string,
       imgUrl: string,

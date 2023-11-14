@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import useRequest from "@/hooks/useRequest";
 import Banner from "./components/Banner";
+import Categories from "./components/Categories";
 
 const defaultRequestData = {
   url: "https://www.fastmock.site/mock/f307fca25de6a901228480d6513e9950/api/home",
@@ -21,24 +22,11 @@ function Home() {
   return (
     <div className="page home-page">
       <Banner 
-        location={data?.data?.location} 
+        location={data?.data.location} 
         banners={data?.data.banners} 
       />
+     <Categories categories={data?.data.categories} />
 
-      <div className="category">
-        {data?.data?.categories.map((item) => {
-          return (
-            <div className="category-item" key={item.id}>
-              <img
-                className="category-item-img"
-                src={item.url}
-                alt={item.name}
-              />
-              <p className="category-item-desc">{item.name}</p>
-            </div>
-          );
-        })}
-      </div>
       <div className="card">
         <h3 className="card-title">
           <img
