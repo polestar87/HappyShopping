@@ -1,6 +1,9 @@
 .home-page {
+  overflow-y: scroll;
+  padding-bottom: .5rem;
   background: #F5F9FA;
   .banner {
+    position: relative;
     height: 2.3rem;
     background: #73D13D;
 
@@ -34,7 +37,6 @@
     }
 
     .swiper-area {
-      position: relative;
       .swiper-item {
         // width: 3.4rem;
         // height: .9rem;
@@ -51,7 +53,7 @@
         position: absolute;
         z-index: 999;
         left: 50%;
-        bottom: .1rem;
+        bottom: 0.36rem;
         transform: translateX(-50%);
         color: #FFF;
         font-size: .12rem;
@@ -120,7 +122,7 @@
     &-content{
       overflow-x: scroll;
       white-space: nowrap;
-      height: 1.9rem;
+      // height: 1.9rem;
       margin-top: .2rem;
       padding-bottom: .14rem;
       &-item{
@@ -133,6 +135,11 @@
           height: 1.1rem;
         }
         &-desc{
+          overflow: hidden;
+          text-overflow: ellipsis;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 2;
           margin: .06rem;
           color: #242424;
           font-size: .12rem;
@@ -158,5 +165,35 @@
         }
       }
     }
+  }
+  .docker{
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 3;
+    background: #FFF;
+    height: .49rem;
+    display: flex;
+    border-top: 0.01rem solid #F5F9FA;
+    font-size: .12rem;
+    color: #B3C1C4;
+    text-align: center;
+    &-item{
+      flex: 1;
+      &-icon{
+        margin: .04rem 0;
+        font-size: .18rem;
+      }
+    }
+    &-item-active{
+      color: #73D13D;
+    }
+  }
+  .bottom{
+    line-height: 1rem;
+     color: #B3C1C4;
+     font-size: .12rem;
+     text-align: center;
   }
 }
