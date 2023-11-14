@@ -24,7 +24,7 @@ const Card = (props: CardPropsType) => {
       <div className="card-content">
         {(list || []).map((item) => {
           return (
-            <div className="card-content-item">
+            <div className="card-content-item" key={item.id}>
               <img
                 className="card-content-item-img"
                 src={item.imgUrl}

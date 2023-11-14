@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { BannersType, LocationType } from "../types";
+import { useNavigate } from "react-router-dom";
 
 type BannerPropsType = {
   location: LocationType | undefined;
@@ -10,15 +11,21 @@ type BannerPropsType = {
 const Banner = (props: BannerPropsType) => {
   const [page, setPage] = useState(1);
   const { location, banners } = props;
-  console.log(location, banners);
-
+  const navigate= useNavigate();
+  function handleLocationClick(){
+    navigate('/nearby')
+  }
+  function handleSearchClick(){
+    navigate('/search')
+  }
+  
   return (
     <div className="banner">
-      <h3 className="location">
+      <h3 className="location" onClick={handleLocationClick}>
         <span className="iconfont">&#xe637;</span>
         {location?.address || ""}
       </h3>
-      <div className="search">
+      <div className="search" onClick={handleSearchClick}>
         <span className="iconfont">&#xe651;</span>
         请输入你需要搜索的内容
       </div>

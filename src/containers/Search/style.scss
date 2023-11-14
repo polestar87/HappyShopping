@@ -1,0 +1,63 @@
+.search-page{
+  font-size: .14rem;
+  .search{
+    display: flex;
+    padding: .08rem .32rem .06rem 0;
+    a{
+      text-decoration: none;
+    }
+    &-back{
+      line-height: .32rem;
+      width: .48rem;
+      font-size: .18rem;
+      text-align: center;
+      color: #242424;
+    }
+    &-area{
+      display: flex;
+      line-height: .32rem;
+      flex: 1;
+      background: #F5F9FA;
+      border-radius: .16rem;
+      .search-icon{
+        width: .3rem;
+        text-align: center;
+      }
+      .search-input{
+        flex: 1;
+        background: none;
+        outline: none;
+        color: #242424;
+        padding-right: .1rem;
+      }
+    }
+  }
+  .title{
+    position: relative;
+    padding: .16rem .1rem .11rem .1rem;
+    color: #b1b1b1;
+    line-height: .22rem;
+    &-close{
+      position: absolute;
+      top: .15rem;
+      right: .2rem;
+      font-size: .18rem;
+    }
+  }
+  .list{
+    padding: 0 .1rem;
+    overflow: hidden;
+    list-style-type: none;
+    &-item{
+      float: left;
+      margin-right: .14rem;
+      margin-bottom: .14rem;
+      font-size: .12rem;
+      line-height: .32rem;
+      border-radius: .16rem;
+      color: #242424;
+      padding: 0 .1rem;
+      background: #F5F9FA;
+    }
+  }
+}
