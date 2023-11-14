@@ -1,8 +1,8 @@
 import { CategoriesType } from "../types";
 
 type CategoriesPropsType = {
-  categories: CategoriesType
-}
+  categories: CategoriesType | undefined;
+};
 
 const Categories = (props: CategoriesPropsType) => {
   const { categories } = props;
