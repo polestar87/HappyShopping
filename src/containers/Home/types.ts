@@ -1,14 +1,17 @@
+export type LocationType = {
+  id: string;
+  address: string;
+}
+export type BannersType = Array<{
+  id: string,
+  url: string
+}>;
+
 export type ResponseType = {
   success: boolean;
   data: {
-    location: {
-      id: string;
-      address: string;
-    };
-    banners: Array<{
-      id: string,
-      url: string
-    }>;
+    location: LocationType;
+    banners: BannersType;
     categories: Array<{
       id: string,
       url: string,

@@ -4,6 +4,7 @@ import { ResponseType } from "./types";
 import { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import useRequest from "@/hooks/useRequest";
+import Banner from "./components/Banner";
 
 const defaultRequestData = {
   url: "https://www.fastmock.site/mock/f307fca25de6a901228480d6513e9950/api/home",
@@ -19,37 +20,11 @@ function Home() {
 
   return (
     <div className="page home-page">
-      <div className="banner">
-        <h3 className="location">
-          <span className="iconfont">&#xe637;</span>
-          {/* 优果购（南开店） */}
-          {data?.data?.location.address || ""}
-        </h3>
-        <div className="search">
-          <span className="iconfont">&#xe651;</span>
-          请输入你需要搜索的内容
-        </div>
-        <div className="swiper-area">
-          <Swiper
-            spaceBetween={0}
-            slidesPerView={1}
-            onSlideChange={(e) => setPage(e.activeIndex + 1)}
-          >
-            {(data?.data?.banners || []).map((item) => {
-              return (
-                <SwiperSlide key={item.id}>
-                  <div className="swiper-item">
-                    <img className="swiper-item-img" src={item.url} alt="" />
-                  </div>
-                </SwiperSlide>
-              );
-            })}
-          </Swiper>
-          <div className="pagination">
-            {page} /{data?.data?.banners.length || 0}
-          </div>
-        </div>
-      </div>
+      <Banner 
+        location={data?.data?.location} 
+        banners={data?.data.banners} 
+      />
+
       <div className="category">
         {data?.data?.categories.map((item) => {
           return (
@@ -77,32 +52,26 @@ function Home() {
           </div>
         </h3>
         <div className="card-content">
-          {
-            (data?.data.freshes || []).map((item) => {
-              return (
-                <div className="card-content-item">
-                  <img
-                    className="card-content-item-img"
-                    src={item.imgUrl}
-                    alt={item.name}
-                  />
-                  <p className="card-content-item-desc">
-                    {item.name}
-                  </p>
-                  <div className="card-content-item-price">
-                    <span className="card-content-item-yen"> &yen;</span>
-                    {Number(item.price).toFixed(2)}
-                    <div className="iconfont">&#xe606;</div>
-                  </div>
+          {(data?.data.freshes || []).map((item) => {
+            return (
+              <div className="card-content-item">
+                <img
+                  className="card-content-item-img"
+                  src={item.imgUrl}
+                  alt={item.name}
+                />
+                <p className="card-content-item-desc">{item.name}</p>
+                <div className="card-content-item-price">
+                  <span className="card-content-item-yen"> &yen;</span>
+                  {Number(item.price).toFixed(2)}
+                  <div className="iconfont">&#xe606;</div>
                 </div>
-              )
-            })
-          }
+              </div>
+            );
+          })}
         </div>
       </div>
-      <div className="bottom">
-        - 我是有底线的 - 
-      </div>
+      <div className="bottom">- 我是有底线的 -</div>
       <div className="docker">
         <div className="docker-item docker-item-active">
           <p className="iconfont docker-item-icon">&#xe6b8;</p>
