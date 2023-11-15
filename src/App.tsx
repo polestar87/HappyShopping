@@ -51,7 +51,7 @@ const router = createHashRouter([
     element: <SearchList />
   },
   {
-    path: '/detail',
+    path: '/detail/:id',
     element: <Detail />
   },
 ])

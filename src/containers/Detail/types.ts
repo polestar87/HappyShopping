@@ -1,7 +1,14 @@
 export type ResponseType = {
-  success: boolean,
-  data: Array<{
+  success: boolean;
+  data: {
     id: string;
-    keyword: string;
-  }>
-}
+    imgUrl: string;
+    title: string;
+    subtitle: string;
+    price: number;
+    sales: string;
+    origin: string;
+    specification: string;
+    detail: string;
+  };
+};

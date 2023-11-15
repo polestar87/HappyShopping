@@ -97,17 +97,19 @@ function SearchList() {
       <div className="list">
         {list.map((item) => {
           return (
-            <div className="item" key={item.id}>
-              <img className="item-img" src={item.imgUrl} alt="" />
-              <div className="item-content">
-                <p className="item-title">{item.title}</p>
-                <div className="item-price">
-                  <span className="item-price-yen">&yen;</span>
-                  {item.price}
+            <Link to={`/detail/${item.id}`}>
+              <div className="item" key={item.id}>
+                <img className="item-img" src={item.imgUrl} alt="" />
+                <div className="item-content">
+                  <p className="item-title">{item.title}</p>
+                  <div className="item-price">
+                    <span className="item-price-yen">&yen;</span>
+                    {item.price}
+                  </div>
+                  <div className="item-sales">已售{item.sales}</div>
                 </div>
-                <div className="item-sales">已售{item.sales}</div>
               </div>
-            </div>
+              </Link>
           );
         })}
       </div>
