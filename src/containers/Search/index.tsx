@@ -1,16 +1,20 @@
 import "./style.scss";
 import { ResponseType } from "./types";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import useRequest from "@/hooks/useRequest";
 
 const defaultRequestData = {
   url: "https://www.fastmock.site/mock/f307fca25de6a901228480d6513e9950/api/hostSearch",
   method: "get",
   manual: true,
+  params: {
+    shopId: "",
+  },
 };
 
 const Search = () => {
+  const navigate = useNavigate();
   const localSearchList = localStorage.getItem("search-list");
   const searchListHistory: string[] = localSearchList
     ? JSON.parse(localSearchList)
@@ -18,29 +22,39 @@ const Search = () => {
   const [keyword, setKeyword] = useState("");
   const [historyList, setHistotyList] = useState(searchListHistory);
 
+  const param = useParams<{ shopId: string }>();
+  if (param.shopId) {
+    defaultRequestData.params.shopId = param.shopId;
+  }
 
   const { data } = useRequest<ResponseType>(defaultRequestData);
-  const hostList = data?.data
+  const hostList = data?.data;
 
   function handleKeyDown(key: string) {
-    console.log(key);
-    if (key === "Enter") {
-      let newHistoryList = [...historyList];
+    if (key === "Enter" && keyword) {
+      const keywordIndex = historyList.findIndex((item) => item === keyword);
+
+      const newHistoryList = [...historyList];
+      if (keywordIndex > -1) {
+        newHistoryList.splice(keywordIndex, 1);
+      }
       newHistoryList.unshift(keyword);
 
       if (newHistoryList.length > 20) {
         newHistoryList.length = 20;
       }
       setHistotyList(newHistoryList);
-
-      setKeyword("");
-
       localStorage.setItem("search-list", JSON.stringify(newHistoryList));
+      setKeyword("");
+      navigate(`/searchList/${param.shopId}/${keyword}`);
     }
   }
   function handleClean() {
     setHistotyList([]);
     localStorage.removeItem("search-list");
+  }
+  function handleKeywordClick(item:string) {
+    navigate(`/searchList/${param.shopId}/${item}`);
   }
   return (
     <div className="page search-page">
@@ -71,7 +85,13 @@ const Search = () => {
           <ul className="list">
             {historyList.map((item, index) => {
               return (
-                <li className="list-item" key={index}>
+                <li
+                  className="list-item"
+                  key={index}
+                  onClick={() => {
+                    handleKeywordClick(item);
+                  }}
+                >
                   {item}
                 </li>
               );
@@ -82,14 +102,19 @@ const Search = () => {
 
       <div className="title">热门搜索</div>
       <ul className="list">
-        {
-          (hostList || []).map((item) => {
-            return <li className="list-item" key={item.id}>{item.keyword}</li>
-          })
-        }
-        {/* <li className="list-item">猪肉</li>
-        <li className="list-item">鸡肉</li>
-        <li className="list-item">海鲜</li> */}
+        {(hostList || []).map((item) => {
+          return (
+            <li
+              className="list-item"
+              key={item.id}
+              onClick={() => {
+                handleKeywordClick(item.keyword);
+              }}
+            >
+              {item.keyword}
+            </li>
+          );
+        })}
       </ul>
     </div>
   );
