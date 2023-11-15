@@ -12,7 +12,7 @@ function SearchList() {
   const [tabValue, setTabValue] = useState("default");
 
   const [requestData, setRequestData] = useState({
-    url: "https://www.fastmock.site/mock/f307fca25de6a901228480d6513e9950/api/search-list",
+    url: "https://www.fastmock.site/mock/f307fca25de6a901228480d6513e9950/api/searchList",
     method: "GET",
     params: {
       keyword,
