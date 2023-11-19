@@ -1,0 +1,160 @@
+.category-page {
+  position: relative;
+
+  .title {
+    position: relative;
+    line-height: 0.44rem;
+    font-size: 0.18rem;
+    color: #242424;
+    text-align: center;
+    background: #fff;
+    .iconfont {
+      position: absolute;
+      left: 0.1rem;
+      top: 0;
+    }
+  }
+  .search {
+    display: flex;
+    padding: 0.06rem 0.1rem;
+    background: #fff;
+    font-size: 0.14rem;
+    &-area {
+      position: relative;
+      display: flex;
+      line-height: 0.32rem;
+      flex: 1;
+      background: #f5f9fa;
+      border-radius: 0.16rem;
+      .search-icon {
+        width: 0.3rem;
+        text-align: center;
+        color: #75818f;
+      }
+      .search-input {
+        flex: 1;
+        background: none;
+        outline: none;
+        color: #242424;
+        padding-right: 0.1rem;
+      }
+    }
+  }
+
+  .category {
+    position: absolute;
+    top: 0.88rem;
+    left: 0;
+    bottom: 0.5rem;
+    width: 0.96rem;
+    background: #f5f9fa;
+    overflow-y: scroll;
+    &-item {
+      color: #242424;
+      font-size: 0.14rem;
+      line-height: 0.52rem;
+      text-align: center;
+      &-active {
+        background: #fff;
+      }
+    }
+  }
+  .tag {
+    position: absolute;
+    top: 0.88rem;
+    left: 0.96rem;
+    right: 0;
+    height: 0.52rem;
+    overflow-x: scroll;
+    white-space: nowrap;
+    &-item {
+      margin-top: 0.1rem;
+      display: inline-block;
+      font-size: 0.14rem;
+      width: 0.62rem;
+      height: 0.32rem;
+      line-height: 0.32rem;
+      text-align: center;
+      background: #f5f9fa;
+      margin-left: 0.1rem;
+      border-radius: 0.05rem;
+      &-active {
+        background: #d9f7be;
+        color: #52c41a;
+      }
+    }
+  }
+  .product {
+    position: absolute;
+    top: 1.4rem;
+    left: 0.96rem;
+    right: 0;
+    bottom: 0.05rem;
+    padding-bottom: 0.5rem;
+
+    // background: #ccc;
+    overflow-y: scroll;
+    &-title {
+      margin: 0.08rem;
+      font-size: 0.12rem;
+      line-height: 0.16rem;
+      color: #242424;
+    }
+    &-item {
+      padding: 0.1rem;
+      display: flex;
+      &-img {
+        width: 0.78rem;
+        height: 0.78rem;
+        margin-right: 0.08rem;
+      }
+      &-content {
+        position: relative;
+        flex: 1;
+      }
+      &-title {
+        color: #242424;
+        font-size: 0.14rem;
+        line-height: 0.22rem;
+        width: 1rem;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+      }
+      &-sales {
+        margin-top: 0.1rem;
+        font-size: 0.12rem;
+        line-height: 0.16rem;
+        color: #b1b1b1;
+      }
+      &-price {
+        margin-top: 0.1rem;
+        font-size: 0.16rem;
+        line-height: 0.24rem;
+        color: #cf1322;
+        &-yen {
+          font-size: 0.12rem;
+          margin-right: 0.02rem;
+        }
+      }
+      &-button {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        background: #73d13d;
+        width: 0.4rem;
+        line-height: 0.24rem;
+        text-align: center;
+        color: #fff;
+        border-radius: 0.04rem;
+        font-size: 0.12rem;
+      }
+    }
+  }
+  .bottom {
+    line-height: 1rem;
+    color: #b3c1c4;
+    font-size: 0.12rem;
+    text-align: center;
+  }
+}
