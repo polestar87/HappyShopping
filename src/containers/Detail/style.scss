@@ -152,4 +152,79 @@
       border-radius: .22rem;
     }
   }
+  .cart {
+    &-content{
+      padding: .2rem .2rem .34rem .2rem;
+      display: flex;
+      border-bottom: .01rem solid #F4F4F4;
+      &-img{
+        display: block;
+        width: .7rem;
+        height: .7rem;
+        margin-right: .48rem;
+      }
+      &-info{
+        font-size: .12rem;
+      }
+      &-title{
+        margin-right: .45rem;
+        color: #242424;
+        line-height: .18rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+      }
+      &-price{
+        // top: .18rem;
+        // left: .08rem;
+        color: #F81C00;
+        font-size: .2rem;
+        // font-weight: bold;
+        margin-top: .15rem;
+        &-yen{
+          font-size: .14rem;
+          margin-right: .02rem;
+          font-weight: normal;
+        }
+      }
+    }
+    &-count{
+      margin: .35rem .16rem;
+      &-content{
+        height: .28rem;
+        line-height: .28rem;
+        font-size: .14rem;
+
+      }
+      &-counter{
+        float: right;
+        font-size: 0;
+      }
+      &-button, &-text{
+        display: inline-block;
+        font-size: .18rem;
+        line-height: .28rem;
+        text-align: center;
+        background: #F4F4F4;
+      }
+      &-button{
+        width: .28rem;
+      }
+      &-text{
+        margin: 0 .1rem;
+        padding: 0 .08rem;
+      }
+    }
+    &-button{
+      line-height: .44rem;
+      border-radius: .22rem;
+      margin: .1rem .16rem;
+      background: #73D13D;
+      color: #FFF;
+      font-size: .16rem;
+      text-align: center;
+    }
+  }
 }
